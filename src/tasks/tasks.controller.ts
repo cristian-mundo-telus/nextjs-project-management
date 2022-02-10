@@ -21,7 +21,6 @@ export class TasksController {
   getTasks(@Query() filterDto: GetTaskFilterDto): Task[] {
     //if we have any filters defined, call taskService.getTaskWithFilters
     //otherwise, just get all task
-    console.log(Object.keys(filterDto).length);
     if (Object.keys(filterDto).length) {
       return this.taskService.getTaskWithFilters(filterDto);
     } else {
